@@ -12,7 +12,6 @@ This program aims to mimick the functionality of a bank account that allows the 
 
 ```
 git clone https://github.com/frodri13/Bank-Tech-Test.git
-
 ```
 
 2. Open IRB in your terminal:
