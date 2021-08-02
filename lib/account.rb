@@ -1,16 +1,17 @@
 class Account
+
 	def initialize
 		@balance = 0
-		@transactions = []
+		@transactions = ["date || credit || debit || balance "]
 	end
 
 	def deposit(date, ammount)
-		@date = date
-		@ammount = ammount
-		@balance += @ammount
+		@transactions << "#{date} || #{ammount}.00 || || #{@balance += ammount}.00"
 	end
 
 	def print_bank_st
-		 "#{@date} || #{@ammount}.00 || || #{@balance}.00"
+	  @transactions.each {|line|
+			puts line
+		}
 	end
 end
