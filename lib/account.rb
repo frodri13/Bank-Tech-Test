@@ -10,6 +10,10 @@ class Account
 		@transactions << "#{date} || #{ammount}.00 || || #{@balance += ammount}.00"
 	end
 
+	def withdraw(date, ammount)
+		@transactions << "#{date} || || #{ammount}.00 || #{@balance -= ammount}.00"
+	end
+
 	def print_bank_st
 		@result << @transactions.sort_by(&:itself).reverse
 	  @result.each {|line|
