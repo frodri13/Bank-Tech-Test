@@ -2,7 +2,8 @@ class Account
 
 	def initialize
 		@balance = 0
-		@transactions = ["date || credit || debit || balance "]
+		@result = ["date || credit || debit || balance"]
+		@transactions = []
 	end
 
 	def deposit(date, ammount)
@@ -10,7 +11,8 @@ class Account
 	end
 
 	def print_bank_st
-	  @transactions.each {|line|
+		@result << @transactions.sort_by(&:itself).reverse
+	  @result.each {|line|
 			puts line
 		}
 	end
