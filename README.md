@@ -4,7 +4,7 @@ This program aims to mimick the functionality of a bank account that allows the 
 
 ## Domain Modelling
 
-![Class Diagram]()
+![Class Diagram](https://raw.githubusercontent.com/frodri13/Bank-Tech-Test/main/img/Account_Class_Model.png)
 
 ## Getting Started
 
