@@ -27,7 +27,8 @@ class Account
 	end
 
 	def format(date)
-		date.gsub! "-", "/"
+		fail "Please format your date into DD/MM/YYYY" if date[3, 2].to_i > 12 
+		date.include?("-") ? date.gsub!("-", "/") : date
 	end
 
 	def order

@@ -40,4 +40,14 @@ RSpec.describe Account do
 		output = capture_stdout { subject.print_bank_st }
 		expect(output.chomp).to eq("date || credit || debit || balance\n14/01/2012 || || 500.05 || 500.40\n10/01/2012 || 1000.45 || || 1000.45")
 	end
+
+	it 'will ask the user to insert the date in the correct format'do
+		expect { subject.deposit("01-14-2012", 500) }.to raise_error("Please format your date into DD/MM/YYYY")
+	end
+
+	it 'can take a date in a different format'do
+	subject.deposit("10/01/2012", 1000)
+	output = capture_stdout { subject.print_bank_st }
+	expect(output.chomp).to eq("date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00")
+end
 end
