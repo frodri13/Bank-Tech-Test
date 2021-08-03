@@ -6,13 +6,15 @@ class Account
 	end
 
 	def deposit(date, ammount)
-		date_converted = date.gsub "-", "/"
-		@transactions << "#{date_converted} || #{ammount}.00 || || #{@balance += ammount}.00"
+		@transactions << "#{format(date)} || #{ammount}.00 || || #{@balance += ammount}.00"
 	end
 
 	def withdraw(date, ammount)
-		date_converted = date.gsub "-", "/"
-		@transactions << "#{date_converted} || || #{ammount}.00 || #{@balance -= ammount}.00"
+		@transactions << "#{format(date)} || || #{ammount}.00 || #{@balance -= ammount}.00"
+	end
+
+	def format(date)
+		date.gsub! "-", "/"
 	end
 
 	def order
