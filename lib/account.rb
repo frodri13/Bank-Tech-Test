@@ -5,11 +5,11 @@ class Account
 		@transactions = []
 	end
 
-	def deposit(date, ammount)
+	def deposit(date = current_date, ammount)
 		@transactions << "#{format(date)} || #{decimal_formatter(ammount)} || || #{decimal_formatter(@balance += ammount)}"
 	end
 
-	def withdraw(date, ammount)
+	def withdraw(date = current_date, ammount)
 		@transactions << "#{format(date)} || || #{decimal_formatter(ammount)} || #{decimal_formatter(@balance -= ammount)}"
 	end
 
@@ -33,5 +33,10 @@ class Account
 
 	def order
 		@transactions.sort_by(&:itself).reverse
+	end
+
+	def current_date
+		date = Time.new
+		"#{date.day}/#{date.month}/#{date.year}"
 	end
 end
