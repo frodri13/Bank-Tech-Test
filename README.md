@@ -1,7 +1,7 @@
-# Bank-Tech-Test
+<img src="https://raw.githubusercontent.com/frodri13/Bank-Tech-Test/main/img/bank.png" align="right"
+     alt="Bank logo from https://www.flaticon.com/" width="150" height="160">
 
-<img src="" align="right"
-     alt="" width="120" height="178">
+# Bank-Tech-Test
 
 This program aims to mimick the functionality of a bank account that allows the user to make deposits, withdrawals and print bank statements.
 
@@ -33,7 +33,7 @@ irb
 
 ## Running tests
 
-Locate your self into the directory and run `rspec`.
+Locate yourself into the directory and run `rspec`.
 
 ## Attributions
 
