@@ -50,6 +50,15 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
+## Additional Features
+
+I also took the liberty of adding the following features to cover some expected edge cases:
+
+1. The current date will be added if no date is provided.
+2. Both the `deposit` and `withdraw` methods can take in dates such as "13-01-2012" or "13/01/2012
+3. It will raise an error if the date is inserted in another format such as "01-13-2012"
+4. It can take ammounts with decimals that will be printed out with two decimal places
+
 ## Attributions
 
 <div>Icons made by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
