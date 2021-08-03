@@ -6,11 +6,11 @@ class Account
 	end
 
 	def deposit(date, ammount)
-		@transactions << "#{format(date)} || #{ammount}.00 || || #{@balance += ammount}.00"
+		@transactions << "#{format(date)} || #{decimal_formatter(ammount)} || || #{decimal_formatter(@balance += ammount)}"
 	end
 
 	def withdraw(date, ammount)
-		@transactions << "#{format(date)} || || #{ammount}.00 || #{@balance -= ammount}.00"
+		@transactions << "#{format(date)} || || #{decimal_formatter(ammount)} || #{decimal_formatter(@balance -= ammount)}"
 	end
 
 	def print_bank_st 
@@ -21,6 +21,10 @@ class Account
 	end
 
 	private
+
+	def decimal_formatter(ammount)
+		'%.2f' % ammount
+	end
 
 	def format(date)
 		date.gsub! "-", "/"
