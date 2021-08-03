@@ -24,6 +24,8 @@ irb
 
 ## Usage
 
+![App Usage Gif](https://raw.githubusercontent.com/frodri13/Bank-Tech-Test/main/img/app_usage.gif)
+
 ## Running tests
 
 Locate your self into the directory and run `rspec`.
