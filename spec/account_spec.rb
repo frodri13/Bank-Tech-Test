@@ -46,8 +46,8 @@ RSpec.describe Account do
 	end
 
 	it 'can take a date in a different format'do
-	subject.deposit("10/01/2012", 1000)
-	output = capture_stdout { subject.print_bank_st }
-	expect(output.chomp).to eq("date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00")
+		subject.deposit("10/01/2012", 1000)
+		output = capture_stdout { subject.print_bank_st }
+		expect(output.chomp).to eq("date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00")
 end
 end
