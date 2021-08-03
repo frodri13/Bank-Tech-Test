@@ -50,4 +50,10 @@ RSpec.describe Account do
 		output = capture_stdout { subject.print_bank_st }
 		expect(output.chomp).to eq("date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00")
 end
+
+	it 'can show the current date when no date is inserted'do
+		subject.deposit(1000)
+		output = capture_stdout { subject.print_bank_st }
+		expect(output.chomp).to eq("date || credit || debit || balance\n#{current_date} || 1000.00 || || 1000.00")
+	end
 end

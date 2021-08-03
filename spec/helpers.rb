@@ -9,4 +9,8 @@ module Helpers
 		end
 		fake.string
 	end
+	def current_date
+		date = Time.new
+		"#{date.day}/#{date.month}/#{date.year}"
+	end
 end
