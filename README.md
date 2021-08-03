@@ -1,5 +1,8 @@
 # Bank-Tech-Test
 
+<img src="" align="right"
+     alt="" width="120" height="178">
+
 This program aims to mimick the functionality of a bank account that allows the user to make deposits, withdrawals and print bank statements.
 
 You can interact with it via IRB within your terminal, please refer to the usage section for more instructions.
@@ -31,3 +34,7 @@ irb
 ## Running tests
 
 Locate your self into the directory and run `rspec`.
+
+## Attributions
+
+<div>Icons made by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
