@@ -2,9 +2,11 @@
 
 This program aims to mimick the functionality of a bank account that allows the user to make deposits, withdrawals and print bank statements.
 
+You can interact with it via IRB within your terminal, please refer to the usage section for more instructions.
+
 ## Domain Modelling
 
-![Class Diagram](https://raw.githubusercontent.com/frodri13/Bank-Tech-Test/main/img/Account_Class.png)
+<img src="https://raw.githubusercontent.com/frodri13/Bank-Tech-Test/main/img/Account_Class.png" width="250" height="250">
 
 ## Getting Started
 
