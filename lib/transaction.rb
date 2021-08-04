@@ -8,4 +8,8 @@ class Transaction
 	def deposit(credit)
 		@ammount = credit
 	end
+
+	def withdraw(debit)
+		@ammount = -debit
+	end
 end
