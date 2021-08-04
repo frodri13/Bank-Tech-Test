@@ -12,4 +12,9 @@ class Transaction
 	def withdraw(debit)
 		@ammount = -debit
 	end
+
+	def date
+		date = Time.new
+		"#{date.day}/#{date.month}/#{date.year}"
+	end
 end
