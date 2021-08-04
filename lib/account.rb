@@ -1,3 +1,6 @@
+require 'require all'
+require_all 'lib'
+
 class Account
 	def initialize
 		@balance = 0
