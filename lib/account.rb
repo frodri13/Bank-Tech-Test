@@ -1,5 +1,5 @@
-require 'transaction'
-require 'statement'
+require_relative 'transaction'
+require_relative 'statement'
 
 class Account
 	attr_reader :transactions, :balance
