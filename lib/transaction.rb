@@ -1,4 +1,6 @@
 class Transaction
+	attr_reader :deposit, :ammount, :date
+
 	def initialize(deposit, ammount)
 		@deposit = deposit
 		@ammount = ammount

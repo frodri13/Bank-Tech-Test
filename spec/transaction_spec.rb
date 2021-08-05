@@ -6,7 +6,7 @@ RSpec.describe Transaction do
 		expect(deposit.record).to eq("#{current_date} || 1000.00 || ||")
 	end
 
-	it 'can make withdraws' do
+	it 'can make withdraws and record the date of the transaction' do
 		withdraw = Transaction.new(false, 500)
 		expect(withdraw.record).to eq("#{current_date} || || 500.00 ||")
 	end
