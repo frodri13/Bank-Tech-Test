@@ -1,17 +1,22 @@
 require 'statement'
-require 'account'
+require 'transaction'
 
 RSpec.describe Statement do
+	let(:deposit_1) { instance_double(Transaction, record: "#{current_date} || 1000.00 || ||", deposit: true, ammount: 1000)}
+	let(:deposit_2) { instance_double(Transaction, record: "#{current_date} || 2000.00 || ||", deposit: true, ammount: 2000)}
 
+	it 'can print a stament of a deposit'do
+		balance_1 = 1000
 
-	# it 'can print a statement with one deposit' do
-	# 	deposit = Transaction.new(true, 1000)
-	# 	deposit_1 = Transaction.new(true, 500)
-	# 	balance = '%.2f' % 1000
-	# 	balance_1 = '%.2f' % 1500
-	# 	transactions = [[deposit, balance], [deposit_1, balance_1]]
-	# 	statement = Statement.new(transactions)
+		statement = Statement.new([[deposit_1, balance_1]])
+		expect(statement.print).to eq("date || credit || debit || balance\n#{current_date} || 1000.00 || || 1000.00\n")
+	end
+	
+	it 'can print a stament of multiple deposits'do
+		balance_1 = 1000
+		balance_2 = 3000
 
-	# 	expect(statement.print).to eq("date || credit || debit || balance\n#{current_date} || 1000.00 || || 1000.00\n#{current_date} || 500.00 || || 1500.00")
-	# end
+		statement = Statement.new([[deposit_1, balance_1], [deposit_2, balance_2]])
+		expect(statement.print).to eq("date || credit || debit || balance\n#{current_date} || 1000.00 || || 1000.00\n#{current_date} || 2000.00 || || 3000.00\n")
+	end
 end
