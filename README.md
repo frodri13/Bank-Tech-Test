@@ -33,7 +33,7 @@ irb
 
 ## Usage
 
-![App Usage Gif]()
+![App Usage Gif]("https://github.com/frodri13/Bank-Tech-Test/blob/main/img/app_usage.gif")
 
 ## Running tests
 
