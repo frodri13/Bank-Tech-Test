@@ -1,20 +1,16 @@
 class Transaction
-	attr_reader :ammount
-
-	def initialize
-		@ammount = 0
-	end
-
-	def deposit(credit)
-		@ammount = credit
-	end
-
-	def withdraw(debit)
-		@ammount = -debit
+	def initialize(deposit, ammount)
+		@deposit = deposit
+		@ammount = ammount
+		@date = date
 	end
 
 	def date
 		date = Time.new
 		"#{date.day}/#{date.month}/#{date.year}"
+	end
+
+	def record
+		@deposit ? "#{@date} || #{'%.2f' % @ammount} || ||" : "#{@date} || || #{'%.2f' % @ammount} ||" 
 	end
 end
