@@ -3,10 +3,17 @@ require_relative 'transaction'
 class Statement
 	def initialize(transactions)
 		@transactions = transactions
-		@table = "date || credit || debit || balance\n"
+		@result = "date || credit || debit || balance\n"
 	end
 
 	def print
-		"#{@table}#{@transactions[0].record} #{@transactions[1]}"
+		formatting
+	  @result
+	end
+
+	def formatting
+		@transactions.each {|transaction|
+			@result += "#{transaction[0].record} #{'%.2f' % transaction[1]}\n"
+		}
 	end
 end

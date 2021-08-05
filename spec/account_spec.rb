@@ -23,4 +23,22 @@ RSpec.describe Account do
 		expect(subject.transactions.first[0]).to be(withdraw)
 		expect(subject.balance).to eq(-500)
 	end
+
+	it 'can print a statement with one deposit' do
+		account = Account.new
+		deposit = Transaction.new(true, 1000)
+		account.transaction(deposit)
+		
+		expect(account.print_statement).to eq("date || credit || debit || balance\n#{current_date} || 1000.00 || || 1000.00\n")
+	end
+
+	it 'can print a statement with two deposits' do
+		account = Account.new
+		deposit_1 = Transaction.new(true, 1000)
+		deposit_2 = Transaction.new(true, 500)
+		account.transaction(deposit_1)
+		account.transaction(deposit_2)
+		
+		expect(account.print_statement).to eq("date || credit || debit || balance\n#{current_date} || 1000.00 || || 1000.00\n#{current_date} || 500.00 || || 1500.00\n")
+	end
 end
