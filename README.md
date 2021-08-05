@@ -7,9 +7,13 @@ This program aims to mimick the functionality of a bank account that allows the 
 
 You can interact with it via IRB within your terminal, please refer to the usage section for more instructions.
 
-## Domain Modelling
+## Classes
 
-<img src="https://raw.githubusercontent.com/frodri13/Bank-Tech-Test/main/img/Account_Class.png" width="250" height="250">
+You will find three classes in this project:
+
+1. Transaction = Takes to arguments in its creation, a boolean for weather it is a deposit or not, and the ammount.
+2. Account = It keeps track of the balance based on the transactions inputed, and also creates statements with the `print_statement` method.
+3. Statement = It prints out all of the transactions recorded in the account.
 
 ## Getting Started
 
@@ -29,11 +33,16 @@ irb
 
 ## Usage
 
-![App Usage Gif](https://raw.githubusercontent.com/frodri13/Bank-Tech-Test/main/img/app_usage.gif)
+![App Usage Gif]()
 
 ## Running tests
 
 Locate yourself into the directory and run `rspec`.
+
+Please note that there are two methods to insert transactions:
+
+1. add_to_balance(transaction) => takes an object as an argument, used for testing with instance doubles of transactions.
+2. transaction(deposit, ammount) => takes in two arguments. This method will create an object of the transaction class.
 
 ## Acceptance criteria
 
