@@ -1,10 +1,14 @@
 require 'statement'
+require 'account'
 
 RSpec.describe Statement do
 	# ["date || credit || debit || balance"]
-	# it 'can print a statement with one deposit' do
-	# 	account = instance_double(Account, transactions: ["#{current_date} || 1000.00 || ||"], balance: 1000)
+	it 'can print a statement with one deposit' do
+		deposit = Transaction.new(true, 1000)
 
-	# end
-	
+		transactions = [deposit]
+		statement = Statement.new(transactions)
+
+		expect(statement.print).to eq("date || credit || debit || balance\n#{current_date} || 1000.00 || ||")
+	end
 end
