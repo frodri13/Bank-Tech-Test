@@ -11,7 +11,7 @@ RSpec.describe Account do
 		deposit = instance_double(Transaction, deposit: true, ammount: 1000)
 		subject.transaction(deposit)
 
-		expect(subject.transactions[0]).to be(deposit)
+		expect(subject.transactions.first[0]).to be(deposit)
 		expect(subject.balance).to eq(1000)
 	end
 
@@ -20,7 +20,7 @@ RSpec.describe Account do
 		
 		subject.transaction(withdraw)
 
-		expect(subject.transactions[0]).to be(withdraw)
+		expect(subject.transactions.first[0]).to be(withdraw)
 		expect(subject.balance).to eq(-500)
 	end
 end

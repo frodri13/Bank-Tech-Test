@@ -7,6 +7,6 @@ class Statement
 	end
 
 	def print
-		"#{@table}#{@transactions[0].record}"
+		"#{@table}#{@transactions[0].record} #{@transactions[1]}"
 	end
 end

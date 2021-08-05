@@ -9,8 +9,8 @@ class Account
 	end
 
 	def transaction(transaction)
-		@transactions << transaction
 		transaction.deposit ? @balance += transaction.ammount : @balance -= transaction.ammount 
+		@transactions << [transaction, @balance]
 	end
 
 	def print_statement
