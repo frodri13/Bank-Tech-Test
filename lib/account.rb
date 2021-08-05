@@ -1,42 +1,28 @@
+require_relative 'transaction' 
+require_relative 'statement'
+
 class Account
+	attr_reader :transactions, :balance
 	def initialize
 		@balance = 0
-		@result = ["date || credit || debit || balance"]
 		@transactions = []
 	end
 
-	def deposit(date = current_date, ammount)
-		@transactions << "#{format(date)} || #{decimal_formatter(ammount)} || || #{decimal_formatter(@balance += ammount)}"
+	def add_transaction(transaction = @auto)
+		add_to_balance(transaction)
+		@transactions << [transaction, @balance]
 	end
 
-	def withdraw(date = current_date, ammount)
-		@transactions << "#{format(date)} || || #{decimal_formatter(ammount)} || #{decimal_formatter(@balance -= ammount)}"
+	def add_to_balance(transaction)
+		transaction.deposit ? @balance += transaction.ammount : @balance -= transaction.ammount 
 	end
 
-	def print_bank_st 
-		@result << order
-	  @result.each {|line|
-			puts line
-		}
+	def transaction(deposit, ammount)
+		@auto = Transaction.new(deposit, ammount)
+		add_transaction
 	end
 
-	private
-
-	def decimal_formatter(ammount)
-		'%.2f' % ammount
-	end
-
-	def format(date)
-		fail "Please format your date into DD/MM/YYYY" if date[3, 2].to_i > 12 
-		date.include?("-") ? date.gsub!("-", "/") : date
-	end
-
-	def order
-		@transactions.sort_by(&:itself).reverse
-	end
-
-	def current_date
-		date = Time.new
-		"#{date.day}/#{date.month}/#{date.year}"
+	def print_statement
+		Statement.new(@transactions).print
 	end
 end
