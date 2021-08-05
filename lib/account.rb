@@ -8,9 +8,18 @@ class Account
 		@transactions = []
 	end
 
-	def transaction(transaction)
-		transaction.deposit ? @balance += transaction.ammount : @balance -= transaction.ammount 
+	def add_transaction(transaction = @auto)
+		add_to_balance(transaction)
 		@transactions << [transaction, @balance]
+	end
+
+	def add_to_balance(transaction)
+		transaction.deposit ? @balance += transaction.ammount : @balance -= transaction.ammount 
+	end
+
+	def transaction(deposit, ammount)
+		@auto = Transaction.new(deposit, ammount)
+		add_transaction
 	end
 
 	def print_statement
